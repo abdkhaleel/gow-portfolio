@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  
+  // Function to scroll to the "About" section
+  const scrollToJourney = () => {
+    const element = document.getElementById("about");
+    if (element) {
+      const yOffset = -80; // Offset to account for the fixed Navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden text-center z-10 px-4">
       
@@ -57,7 +68,10 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 2.2 }}
         className="mt-16"
       >
-        <button className="group relative px-10 py-4 bg-transparent border border-gow-muted/50 hover:border-gow-red transition-all duration-300">
+        <button 
+          onClick={scrollToJourney} // <--- Added the click handler here
+          className="group relative px-10 py-4 bg-transparent border border-gow-muted/50 hover:border-gow-red transition-all duration-300 cursor-pointer"
+        >
           <span className="relative z-10 text-gow-text font-heading uppercase tracking-widest group-hover:text-white transition-colors">
             Begin Journey
           </span>

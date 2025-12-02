@@ -26,7 +26,7 @@ export default function About() {
               
               {/* PLACEHOLDER IMAGE - Change 'src' to your photo later */}
               <img 
-                src="https://api.dicebear.com/9.x/avataaars/svg?seed=Kratos&backgroundColor=161b22" 
+                src="/khaleel.jpg" 
                 alt="Profile" 
                 className="w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" 
               />
@@ -82,7 +82,7 @@ export default function About() {
               <Scroll className="text-gow-gold w-6 h-6" />
               <div>
                 <h4 className="text-gow-muted text-xs uppercase tracking-widest">Experience</h4>
-                <p className="text-gow-text font-heading text-lg">Lvl 3 (3 Years)</p>
+                <p className="text-gow-text font-heading text-lg">Lvl 1 (Fresher)</p>
               </div>
             </div>
 

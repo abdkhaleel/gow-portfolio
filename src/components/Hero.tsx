@@ -38,19 +38,38 @@ export default function Hero() {
 
       {/* 1. Background Runes (Faint & Huge) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        {/* Rotating Runic Circles */}
         <motion.div 
-          initial={{ rotate: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-          className="w-[800px] h-[800px] border-[2px] border-gow-muted/5 rounded-full flex items-center justify-center absolute opacity-20"
+          initial={{ rotate: 0, opacity: 0 }}
+          animate={{ rotate: 360, opacity: 0.15 }}
+          transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
+          className="w-[900px] h-[900px] border-[3px] border-gow-gold/20 rounded-full flex items-center justify-center absolute"
+          style={{ 
+            boxShadow: "inset 0 0 80px rgba(200, 170, 110, 0.1), 0 0 80px rgba(200, 170, 110, 0.05)" 
+          }}
         >
-           <div className="w-[600px] h-[600px] border-[1px] border-gow-muted/10 rounded-full" />
+          <motion.div 
+            animate={{ rotate: -360 }}
+            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+            className="w-[700px] h-[700px] border-[2px] border-gow-red/20 rounded-full flex items-center justify-center"
+          >
+            <div className="w-[500px] h-[500px] border-[1px] border-gow-blue/30 rounded-full" />
+          </motion.div>
         </motion.div>
-        <div className="text-[20vw] font-heading text-gow-muted/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm">
+
+        {/* Large Background Runes with Glow */}
+        <div className="absolute top-1/4 left-1/4 text-9xl font-heading text-gow-gold/10 blur-[2px] animate-pulse">
+          ᚦ
+        </div>
+        <div className="absolute bottom-1/3 right-1/4 text-8xl font-heading text-gow-red/10 blur-[2px] animate-pulse" style={{ animationDelay: "1s" }}>
+          ᛟ
+        </div>
+        
+        {/* Central Ragnarok Text */}
+        <div className="text-[18vw] font-heading text-gow-muted/8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm tracking-widest">
           ᚱᚨᚷᚾᚨᚱᛟᚲ
         </div>
       </div>
-
       {/* 2. Floating Snow / Ash Particles */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {particles.map((p) => (

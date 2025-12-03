@@ -70,7 +70,7 @@ export default function Navbar() {
         className={clsx(
           "fixed top-0 left-0 w-full max-w-[100vw] z-50 transition-all duration-500 box-border",
           isScrolled 
-            ? "bg-[#0c0e12]/95 backdrop-blur-xl py-3 shadow-[0_8px_40px_rgba(0,0,0,0.7)]" 
+            ? "bg-[#0c0e12]/95 backdrop-blur-xl py-4 shadow-[0_8px_40px_rgba(0,0,0,0.7)]" // Changed py-3 to py-4 for rune space
             : "bg-transparent py-6"
         )}
       >
@@ -139,12 +139,14 @@ export default function Navbar() {
                       : "text-gow-muted hover:text-white"
                   )}
                 >
-                  {/* Enhanced Rune above text */}
+                  {/* Enhanced Rune above text - DYNAMIC POSITIONING ADDED HERE */}
                   <span className={clsx(
-                      "absolute -top-4 left-1/2 -translate-x-1/2 text-sm font-heading transition-all duration-300",
+                      "absolute left-1/2 -translate-x-1/2 text-sm font-heading transition-all duration-300",
+                      // When scrolled, pull rune closer (-top-3) vs default (-top-5)
+                      isScrolled ? "-top-3" : "-top-5", 
                       activeTab === item.id 
                         ? "opacity-100 text-gow-gold drop-shadow-[0_0_8px_rgba(200,170,110,0.8)]" 
-                        : "opacity-0 text-gow-muted group-hover:opacity-60 group-hover:-top-5"
+                        : "opacity-0 text-gow-muted group-hover:opacity-60"
                   )}>
                     {item.rune}
                   </span>

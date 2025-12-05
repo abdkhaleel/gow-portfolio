@@ -307,7 +307,7 @@ export default function LeetCode() {
                   transition={{ delay: 0.4 }}
                   className="text-6xl font-heading text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                 >
-                  668
+                  671
                 </motion.p>
               </div>
               
@@ -345,7 +345,7 @@ export default function LeetCode() {
               <DifficultyBar 
                 label="Easy" 
                 sub="Warmup Battles"
-                count={177} 
+                count={178} 
                 total={915} 
                 icon={<Shield className="w-5 h-5" />} 
                 color="text-cyan-400" 
@@ -358,7 +358,7 @@ export default function LeetCode() {
               <DifficultyBar 
                 label="Medium" 
                 sub="Standard Combat"
-                count={360} 
+                count={361} 
                 total={1960} 
                 icon={<Sword className="w-5 h-5" />} 
                 color="text-gow-gold" 
@@ -371,8 +371,8 @@ export default function LeetCode() {
               <DifficultyBar 
                 label="Hard" 
                 sub="Boss Fights"
-                count={131} 
-                total={888} 
+                count={132} 
+                total={889} 
                 icon={<Target className="w-5 h-5" />} 
                 color="text-gow-red" 
                 bg="bg-gow-red"

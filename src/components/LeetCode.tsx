@@ -10,8 +10,8 @@ import {
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const USERNAME = "abdkhaleel";
-const PROXY_BASE = "https://corsproxy.io/?url=";
-const GQL_URL = encodeURIComponent("https://leetcode.com/graphql/");
+// const PROXY_BASE = "https://corsproxy.io/?url=";
+// const GQL_URL = encodeURIComponent("https://leetcode.com/graphql/");
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -40,11 +40,12 @@ interface LeetCodeStats {
 // ─── GraphQL Fetcher ──────────────────────────────────────────────────────────
 
 async function gql(query: string, variables: Record<string, unknown> = {}) {
-  const res = await fetch(`${PROXY_BASE}${GQL_URL}`, {
+  const res = await fetch('/api/leetcode', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, variables }),
   });
+  
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
   if (json.errors?.length) throw new Error(json.errors[0].message);
